@@ -1,0 +1,66 @@
+body{
+  font-size: 18px;
+  background-color: rgb(22, 20, 20);
+  color: #dc3545;
+ 
+}
+header{  
+margin-left:100px;
+position: static;
+text-align: center;
+font-size: 21px;
+background-color: black;
+
+}
+
+li{
+padding-top: 20px;
+margin-left: 150px;
+margin-bottom: 0px;
+}
+.membro{
+margin-top: 50px;
+border-width: 5px;
+border-top-style: solid;
+margin-bottom: 20px;
+padding-top: 25px;
+
+}
+.busca{
+  margin-top: 12px;
+  margin-right: 50px;
+}
+.botao{
+text-align: right;
+margin-top: 40px;
+font-size: 30px;
+margin-bottom: 40px;
+}
+select{
+margin-top: 6px;
+}
+.login{
+padding: 0px;
+margin-top: 6px;
+margin-right: 30px;
+margin-left: 10px;
+border-radius: 10px;
+border-style: solid;
+border-width: 4px;
+color:#dc3545;
+}
+
+img{
+  height: 200px;
+  width: 150px;
+}
+.carrinho{
+  height:70px;
+  width: 70px;
+  border-radius:20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(0, 0, 0);
+
+}
+  
