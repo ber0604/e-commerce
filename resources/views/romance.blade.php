@@ -19,17 +19,8 @@
 
   <!--  products  -->
   <div class="items-container">
+
     <div class="card-1 card" id="filmes">
-      <img class="product-image " src="imagens/shrek.webp" alt="">
-      <button class="add-to-cart">Adicionar ao carrinho</button>
-      <span class="product-price text-danger">R$ 20,00</span>
-    </div>
-    <div class="card-2 card" id="filmes">
-      <img class="product-image" src="imagens/creed.jpg" alt="">
-      <button class="add-to-cart">Adicionar ao carrinho</button>
-      <span class="product-price text-danger">R$ 20,00</span>
-    </div>
-    <div class="card-3 card" id="filmes">
       <img class="product-image" src="imagens/romance.jpg" alt="">
       <button class="add-to-cart">Adicionar ao carrinho</button>
       <span class="product-price text-danger">R$ 20,00</span>
@@ -38,5 +29,9 @@
   </div>
   </div>
 
+  @yield('content')
 
-  @endsection
+  <script src="{{asset('js/script.js')}}"></script>
+
+  @include('templates.footer')
+
