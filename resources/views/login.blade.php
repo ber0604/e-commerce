@@ -33,7 +33,7 @@
                 <div class="invalid-feedback">Inválido.</div>
             </div>
             <div class="mb-3">
-                <a href="cadastro.php" style="color: #dc3545" target="_blank">Não possuo cadastro</a>
+                <a href="{{route("cadastro")}}" style="color: #dc3545" target="_blank">Não possuo cadastro</a>
             </div>
 
             <div class="mb-3">

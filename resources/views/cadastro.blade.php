@@ -29,7 +29,7 @@
             <div class="col-12">
               <label for="cpf" class="form-label">CPF</label>
               <div class="input-group has-validation">
-                <input type="text" class="form-control" id="username" placeholder="000.000.000-00" required>
+                <input type="text" class="form-control"  name="cpf" id="cpf" placeholder="000.000.000-00" required>
                 <div class="invalid-feedback">
                   000.000.000-00
                 </div>
@@ -45,22 +45,22 @@
             </div>
 
             <div class="col-12">
-              <label for="telefone" class="form-label">Telefone</label>
-              <input type="text" class="form-control" id="address" placeholder="(00) 00000-0000" required>
+              <label for="telephone" class="form-label">Telefone</label>
+              <input type="text" class="form-control"  name="telephone" id="telephone" placeholder="(00) 00000-0000" required>
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
             </div>
             <div class="col-12">
-              <label for="text" class="form-label">Crie uma senha</label>
-              <input type="password" class="form-control" id="senha" name="password" placeholder="********" required>
+              <label for="password" class="form-label">Crie uma senha</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="********" required>
               <div class="invalid-feedback">
                 Por favor, crie sua senha.
               </div>
             </div>
             <div class="col-12">
-              <label for="text" class="form-label">Confirme sua senha</label>
-              <input type="password" class="form-control" id="senha" placeholder="********" required>
+              <label for="password" class="form-label">Confirme sua senha</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="********" required>
               <div class="invalid-feedback">
                 Por favor, confirme sua senha.
               </div>
@@ -72,13 +72,9 @@
 
       </div>
   </div>
-  <footer class="my-5 pt-5 text-muted text-center text-small bg-black">
-    <p class="mb-1">&copy; 2022 FilmesBR</p>
 
-  </footer>
 </body>
 </html>
 
-
-  @endsection
+@yield('content')
 
