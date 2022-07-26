@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuario;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -30,5 +31,17 @@ class UsuarioController extends Controller
             }
         }
         return view('login');
+    }
+
+    public function createSave(Request $form){
+        
+        Usuario::create($form);
+
+    }
+
+    public function create(){
+
+        return view("cadastro");
+        
     }
 }
