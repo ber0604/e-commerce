@@ -36,9 +36,5 @@
             </div>
         </div>
     </div>
-    </div>
-    @yield('content')
-
-    <script src="{{ asset('js/script.js') }}"></script>
 
     @include('templates.footer')

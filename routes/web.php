@@ -24,6 +24,7 @@ route::get('/home', [HomeController::class, 'index'])->name('home');
 route::get('/acao', [AcaoController::class, 'index'])->name('acao');
 
 route::get('/cadastro', [CadastroController::class, 'index'])->name('cadastro');
+route::POST('/cadastro', [CadastroController::class, 'create'])->name('cadastro');
 
 route::get('/conta', [ContaController::class, 'index'])->name('conta');
 
@@ -34,7 +35,7 @@ route::get('/romance', [RomanceController::class, 'index'])->name('romance');
 route::get('/membro', [MembroController::class, 'index'])->name('membro');
 
 route::get('/login', [UsuarioController::class, 'login'])->name('login');
-
 route::POST('/login', [UsuarioController::class, 'login'])->name('login');
+Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
 
 route::get('/infantil', [InfantilController::class, 'index'])->name('infantil');

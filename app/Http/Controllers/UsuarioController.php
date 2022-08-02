@@ -31,4 +31,10 @@ class UsuarioController extends Controller
         }
         return view('login');
     }
+    public function logout() {
+        Auth::logout();
+        return redirect('login');
+      }
+
+
 }

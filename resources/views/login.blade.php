@@ -16,24 +16,29 @@
     <div class="col-sm-5 container pt-5">
         <img src="https://png.pngtree.com/element_our/png_detail/20181227/movie-icon-which-is-designed-for-all-application-purpose-new-png_287896.jpg"
             class="mx-auto d-block ">
-
-        <form action="index.php" method="POST">
+        @if (session('erro'))
+            <div>
+                {{ session('erro') }}
+            </div>
+        @endif
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
             <div class="mb-3 mt-3">
-                <label for="email">Email:</label>
-                <input type="email" name="username" class="form-control" id="email"
-                    placeholder="Entre com seu email" required>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" class="form-control"
+                    placeholder="Entre com seu username" required>
                 <div class="valid-feedback">Válido.</div>
                 <div class="invalid-feedback">Inválido.</div>
             </div>
             <div class="mb-3">
-                <label for="senha">Senha:</label>
-                <input type="password" class="form-control" id="senha" placeholder="Entre com sua senha"
-                    name="password" required>
+                <label for="password">Senha:</label>
+                <input type="password" class="form-control" name="password" id="password"
+                    placeholder="Entre com sua senha" required>
                 <div class="valid-feedback">Válido.</div>
                 <div class="invalid-feedback">Inválido.</div>
             </div>
             <div class="mb-3">
-                <a href="{{route("cadastro")}}" style="color: #dc3545" target="_blank">Não possuo cadastro</a>
+                <a href="{{ route('cadastro') }}" style="color: #dc3545" target="_blank">Não possuo cadastro</a>
             </div>
 
             <div class="mb-3">

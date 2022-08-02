@@ -10,7 +10,7 @@
           <li>
             <label for="genero">Gênero:</label>
             <select id="generos" name="generos" onchange="location = this.value;">
-              <option value=""></option>    
+              <option value=""></option>
               <option value="{{route('acao')}}">Ação</option>
               <option value="{{route('infantil')}}">Infantil</option>
               <option value="{{route('romance')}}">Romance</option>
@@ -26,7 +26,13 @@
         </div>
 
         <div class="login">
+          @auth
+          <a href="{{route('logout')}}" class="col-sm nav-link px-2 text-danger ">Logout</a>
+          @endauth
+
+          @guest
           <a href="{{route('login')}}" class="col-sm nav-link px-2 text-danger ">Login</a>
+          @endguest
         </div>
 
         <div class="cart-btn">
@@ -41,7 +47,3 @@
       </div>
   </header>
 
-@yield('content')
-
-
-@include('templates.footer')
