@@ -1,4 +1,4 @@
-@include('templates.header')
+@include('base.header')
 
 <body>
 
@@ -63,11 +63,7 @@
                             <button type="submit" class="btn btn-danger">Atualizar meu Cadastro</button>
                         </div>
                     </div>
-
-
             </div>
-
-
 
     </div>
 

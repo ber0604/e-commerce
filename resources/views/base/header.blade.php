@@ -1,4 +1,5 @@
-@include('templates.head')
+@extends('base.head')
+
 <header class="container-fluid p-3 bg-black text-danger">
     <div class="header conatiner">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -39,7 +40,6 @@
           <i id="cart" class="fas fa-shopping-cart"></i>
           <span class="cart-quantity">0</span>
         </div>
-
 
       </div>
       <div class="membro">

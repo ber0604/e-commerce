@@ -1,5 +1,4 @@
-@include('templates.header')
-@section('content')
+@include('base.header')
 
     <div class="text-danger bg-black container ">
         <main>

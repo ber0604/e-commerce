@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AcaoController;
-use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\ContaController;
 use App\Http\Controllers\StreamingController;
 use App\Http\Controllers\RomanceController;
@@ -37,5 +36,6 @@ route::get('/membro', [MembroController::class, 'index'])->name('membro');
 route::get('/login', [UsuarioController::class, 'login'])->name('login');
 route::POST('/login', [UsuarioController::class, 'login'])->name('login');
 Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
+
 
 route::get('/infantil', [InfantilController::class, 'index'])->name('infantil');
