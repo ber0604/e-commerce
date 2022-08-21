@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AcaoController;
+use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\ContaController;
 use App\Http\Controllers\StreamingController;
 use App\Http\Controllers\RomanceController;

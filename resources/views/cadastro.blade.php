@@ -81,7 +81,7 @@
             </div>
     </div>
     <<script src="{{ asset('js/cadastro.js') }}"></script>
-    @include('templates.footer')
+    @include('base.footer')
     </body>
 
     </html>

@@ -12,8 +12,4 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
-<<<<<<< HEAD:resources/views/templates/head.blade.php
-<body>
-=======
-<body>
->>>>>>> 68016e2cf6c2abf135af3a9e02e59ffb5e3f01db:resources/views/base/head.blade.php
+

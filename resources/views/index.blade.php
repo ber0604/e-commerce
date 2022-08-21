@@ -1,4 +1,4 @@
-@include('templates.header')
+@include('base.header')
 
 
 <div class="cart-modal-overlay">
@@ -14,9 +14,6 @@
 </div>
 
 
-<!--   end of cart modal -->
-
-<!--  products  -->
 <div class="items-container">
     <div class="card-1 card" id="filmes">
         <img class="product-image " src="imagens/shrek.webp" alt="">
@@ -38,4 +35,4 @@
 
 <script src="{{ asset('js/script.js') }}"></script>
 
-@include('templates.footer')
+@include('base.footer')
