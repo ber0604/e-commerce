@@ -16,8 +16,9 @@ class CreateCategoriaTable extends Migration
         Schema::create('categoria', function (Blueprint $table) {
             $table->increments("id");
             $table->string('name', 255);
+
             $table->timestamps();
-            $table->boolean('admin')->default(0);
+            $table->boolean('admin')->default(0); //pedir pra que serve
         });
     }
 

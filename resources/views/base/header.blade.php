@@ -6,15 +6,15 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="{{route('home')}}" class=" col-sm nav-link px-2 text-danger ">Home</a></li>
-          <li><a href="{{route('streaming')}}" class="col-sm nav-link px-2 text-danger ">Streaming</a></li>
+          <li><a href="{{route('home')}}" class="col-sm nav-link px-2 text-danger ">Streaming</a></li>
           <li><a href="{{route('conta')}}" class="col-sm nav-link px-2 text-danger  ">Minha conta</a></li>
           <li>
             <label for="genero">Gênero:</label>
             <select id="generos" name="generos" onchange="location = this.value;">
               <option value=""></option>
-              <option value="{{route('acao')}}">Ação</option>
-              <option value="{{route('infantil')}}">Infantil</option>
-              <option value="{{route('romance')}}">Romance</option>
+              <option value="{{route('home')}}">Ação</option>
+              <option value="{{route('home')}}">Infantil</option>
+              <option value="{{route('home')}}">Romance</option>
 
             </select>
           </li>
@@ -43,7 +43,7 @@
 
       </div>
       <div class="membro">
-        <a href="{{route('membro')}}" class=" col-sm nav-link px-2 text-danger ">SEJA MEMBRO</a>
+        <a href="{{route('home')}}" class=" col-sm nav-link px-2 text-danger ">SEJA MEMBRO</a>
       </div>
   </header>
 

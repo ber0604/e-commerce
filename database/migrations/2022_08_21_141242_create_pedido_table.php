@@ -15,11 +15,11 @@ class CreatePedidoTable extends Migration
     {
         Schema::create('pedido', function (Blueprint $table) {
             $table->increments("id");
-            $table->dateTime('dt_pedido')->nullable();
+            $table->dateTime('dt_pedido');
             $table->string('status', 4);
-            $table->unsignedBigInteger('usuario_id');
+            $table->integer('usuario_id')->unsigned();
 
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->foreign("usuario_id")->references("id")->on("usuarios")->onDelete("cascade");
             $table->timestamps();
 
         });

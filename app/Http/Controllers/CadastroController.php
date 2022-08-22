@@ -8,11 +8,8 @@ use Illuminate\Support\Facades\Hash;
 
 class CadastroController extends Controller
 {
-    public function index(){
-        return view('cadastro');
-    }
 
-    public function create(Request $form){
+    public function cadastro(Request $form){
 
         $usuario = new Usuario();
 
