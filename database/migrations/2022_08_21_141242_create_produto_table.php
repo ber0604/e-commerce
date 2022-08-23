@@ -19,11 +19,11 @@ class CreateProdutoTable extends Migration
             $table->string('foto', 255);
             $table->decimal('valor', 10, 2);
             $table->string('descricao', 250)->nullable();
-            $table->integer('categoria_id')->unsigned();
+            $table->integer('genero_id')->unsigned();
 
             $table->timestamps();
 
-            $table->foreign('categoria_id')->references('id')->on('categoria');
+            $table->foreign('genero_id')->references('id')->on('genero');
 
         });
     }

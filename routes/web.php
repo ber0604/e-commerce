@@ -21,8 +21,9 @@ Route::get('/', function () {
 
 route::get('/home', [HomeController::class, 'index'])->name('home');
 
-route::match(['get', 'post'], '/', [ProdutoController::class, 'index'])->name('home');
-//route::match(['get', 'post'], '/', [ProdutoController::class, 'genero'])->name('genero');
+route::match(['get', 'post'], '/home', [ProdutoController::class, 'index'])->name('home');
+route::match(['get', 'post'], '/genero', [ProdutoController::class, 'genero'])->name('genero');
+route::match(['get', 'post'], '/{idgenero}/genero', [ProdutoController::class, 'genero'])->name('genero_id');
 
 route::match(['get', 'post'], '/cadastro', [CadastroController::class, 'cadastro'])->name('home');
 

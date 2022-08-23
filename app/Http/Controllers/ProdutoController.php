@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Genero;
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
@@ -10,15 +13,28 @@ class ProdutoController extends Controller
         $data = [];
 
 
-        $listafilmes = \App\Models\Produto::all();
+        $listafilmes = Produto::all();
         $data["lista"] = $listafilmes;
 
         return view("home", $data);
     }
 
-    // public function genero(Request $request){
-    //     $data = [];
+    public function genero(Request $request, $idgenero = 0){
+        $data = [];
 
-    //     return view("genero", $data);
-    // }
+        $listaGeneros = Genero::all();
+
+        $queryProdutos = Produto::limit(4);
+
+        if($idgenero != 0){
+            $queryProdutos->where("genero_id" , $idgenero);
+        }
+
+        $listaProdutos = $queryProdutos->get();
+
+        $data ["lista"] = $listaProdutos;
+        $data ["listaGenero"] = $listaGeneros;
+
+        return view("genero", $data);
+    }
 }
