@@ -22,15 +22,20 @@ Route::get('/', function () {
 route::get('/home', [HomeController::class, 'index'])->name('home');
 
 route::match(['get', 'post'], '/home', [ProdutoController::class, 'index'])->name('home');
+
 route::match(['get', 'post'], '/genero', [ProdutoController::class, 'genero'])->name('genero');
 route::match(['get', 'post'], '/{idgenero}/genero', [ProdutoController::class, 'genero'])->name('genero_id');
 
-route::match(['get', 'post'], '/cadastro', [CadastroController::class, 'cadastro'])->name('home');
+route::match(['get', 'post'], '/{idproduto}/carrinho/adicionar', [ProdutoController::class, 'adicionarCarrinho'])
+    ->name('adicionarCarrinho');
+
+route::match(['get', 'post'], '/carrinho', [ProdutoController::class, 'verCarrinho'])
+->name('verCarrinho');
+
+route::match(['get', 'post'], '/cadastro', [CadastroController::class, 'cadastro'])->name('cadastro');
 
 route::get('/conta', [ContaController::class, 'index'])->name('conta');
 
 route::get('/login', [UsuarioController::class, 'login'])->name('login');
 route::POST('/login', [UsuarioController::class, 'login'])->name('login');
 Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
-
-

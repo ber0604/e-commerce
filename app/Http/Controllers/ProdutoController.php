@@ -34,7 +34,28 @@ class ProdutoController extends Controller
 
         $data ["lista"] = $listaProdutos;
         $data ["listaGenero"] = $listaGeneros;
+        $data ["idgenero"] = $idgenero;
 
         return view("genero", $data);
+    }
+
+    public function adicionarCarrinho($idproduto= 0, Request $request){
+        $prod =Produto::find($idproduto);
+
+        if($prod){
+            $carrinho = session('carrinho' , []);
+
+            array_push($carrinho, $prod);
+            session(['carrinho' => $carrinho]);
+        }
+
+        return redirect()->route("home");
+    }
+
+    public function verCarrinho(Request $request){
+
+        $carrinho = session('carrinho' , []);
+        dd($carrinho);
+
     }
 }
