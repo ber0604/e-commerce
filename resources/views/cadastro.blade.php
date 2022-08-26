@@ -1,5 +1,5 @@
-@include('base.header')
-
+@extends("layout")
+@section("conteudo")
 <div class="text-danger bg-black container ">
     <main>
 
@@ -81,8 +81,4 @@
 
         </div>
 </div>
-<script src="{{ asset('js/cadastro.js') }}"></script>
-@include('base.footer')
-</body>
-
-</html>
+@endsection
