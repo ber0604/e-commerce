@@ -7,11 +7,40 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function() {
+        function mask_cpf() {
+            let cpf = document.getElementById('cpf').value
 
-            $('.telephone').mask('9999-9999');
+            cpf = cpf.replace(/\D/g, "")
+            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
+            cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2")
 
-        });
+            cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+            document.getElementById('cpf').value = cpf
+        }
+
+        function mask(o, f) {
+            setTimeout(function() {
+                var v = mphone(o.value);
+                if (v != o.value) {
+                    o.value = v;
+                }
+            }, 1);
+        }
+
+        function mphone(v) {
+            var r = v.replace(/\D/g, "");
+            r = r.replace(/^0/, "");
+            if (r.length > 10) {
+                r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+            } else if (r.length > 5) {
+                r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+            } else if (r.length > 2) {
+                r = r.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+            } else {
+                r = r.replace(/^(\d*)/, "($1");
+            }
+            return r;
+        }
     </script>
 @endsection
 @section('conteudo')
@@ -46,7 +75,8 @@
                         <div class="col-12">
                             <label for="cpf" class="form-label">CPF</label>
                             <div class="input-group has-validation">
-                                <input type="text" class="form-control" name="cpf" id="cpf" required>
+                                <input type="text" class="form-control" name="cpf" onkeyup="mask_cpf()"
+                                    maxlength="14" id="cpf" placeholder="000.000.000-00" required>
 
                             </div>
                         </div>
@@ -61,9 +91,9 @@
                         </div>
 
                         <div class="col-12">
-                            <label for="telephone" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" name="telephone" id="telephone"
-                                placeholder="(00) 00000-0000" required>
+                            <label for="phone" class="form-label">Telefone</label>
+                            <input type="text" class="form-control" name="phone" id="phone"
+                                placeholder="(00) 00000-0000" required onkeypress="mask(this, mphone);" onblur="mask(this, mphone);">
                             <div class="invalid-feedback">
                                 Coloque seu número de telefone.
                             </div>

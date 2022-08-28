@@ -39,4 +39,8 @@ class CadastroController extends Controller
 
         return redirect()->route('index');
     }
+
+    // public function editarCadastro(){
+
+    // }
 }

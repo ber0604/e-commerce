@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Genero;
 use App\Models\Produto;
 use App\Servicos\VendaService;

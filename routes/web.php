@@ -36,7 +36,7 @@ route::match(['get', 'post'] , '/cadastrar' , [CadastroController::class , 'inde
 route::get('/cliente/cadastrar', [CadastroController::class, 'cadastro'])->name('cadastro');
 route::POST('/cliente/cadastrar', [CadastroController::class, 'cadastro'])->name('cadastro');
 
-route::get('/conta', [ContaController::class, 'index'])->name('conta');
+// route::POST('/{idusuario}/cliente/editar', [ContaController::class, 'editarCadastro'])->name('editar_cadastro');
 
 route::get('/login', [UsuarioController::class, 'login'])->name('login');
 route::POST('/login', [UsuarioController::class, 'login'])->name('login');

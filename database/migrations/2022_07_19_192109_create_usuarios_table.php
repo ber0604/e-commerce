@@ -16,7 +16,7 @@ class CreateUsuariosTable extends Migration
             $table->string('username', 255)->unique();
             $table->string('cpf', 255);
             $table->string('password', 255);
-            $table->string('telephone', 255);
+            $table->string('phone', 255);
             $table->timestamps();
             $table->boolean('admin')->default(0);
         });
