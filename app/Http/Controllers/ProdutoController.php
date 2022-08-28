@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Genero;
 use App\Models\Produto;
-use Illuminate\Http\Request;
+use App\Servicos\VendaService;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProdutoController extends Controller
 {
@@ -40,13 +42,13 @@ class ProdutoController extends Controller
     }
 
     public function adicionarCarrinho($idproduto= 0, Request $request){
-        $prod = Produto::find($idproduto);
+        $produto = Produto::find($idproduto);
 
-        if($prod){
-            
+        if($produto){
+
             $carrinho = session('carrinho' , []);
 
-            array_push($carrinho, $prod);
+            array_push($carrinho, $produto);
             session(['carrinho' => $carrinho]);
         }
 
@@ -67,6 +69,21 @@ class ProdutoController extends Controller
              unset($carrinho[$id]);
         }
         session(["carrinho" => $carrinho]);
+        return redirect()->route("verCarrinho");
+    }
+
+    public function finalizarCarrinho(Request $request){
+
+        $produtos = session('carrinho' , []);
+        $vendaService = new VendaService();
+        $result = $vendaService->finalizarVenda($produtos, Auth::user());
+
+        if($result["status"] == "ok"){
+            $request()->session()->flush('carrinho');
+        }
+
+        $request->session()->flash($result["status"], $result["message"]);
+
         return redirect()->route("verCarrinho");
     }
 }

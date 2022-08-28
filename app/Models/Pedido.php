@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pedido extends Model
 {
-    use HasFactory;
+    protected $table = "pedido";
+
+    protected $fillable = ['dt_pedido', 'status' , 'usuario_id',];
 }

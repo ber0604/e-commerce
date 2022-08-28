@@ -3,33 +3,40 @@
 namespace App\Http\Controllers;
 
 use App\Models\Usuario;
+use App\Servicos\ClienteService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class CadastroController extends Controller
 {
 
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $data = [];
 
-        return view("cadastro" , $data );
-
+        return view("cadastro", $data);
     }
-    public function cadastro(Request $form){
+    public function cadastro(Request $form)
+    {
 
+        $values = $form->all();
         $usuario = new Usuario();
 
-        $usuario->name = $form->name;
-        $usuario->username = $form->username;
-        $usuario->email = $form->email;
-        $usuario->cpf = $form->cpf;
-        $usuario->telephone = $form->telephone;
-        $usuario->password = Hash::make($form->password);
+        $usuario->fill($values);
+        $usuario->username = $form->input("username", "");
 
-        $usuario->save();
+        $senha = $form->input("password", "");
+        $usuario->password = Hash::make($senha);
 
-        return redirect()->route('login' );
+        $clienteServico = new ClienteService();
+        $result = $clienteServico->salvarUsuario($usuario);
 
+        $message = $result["message"];
+        $status = $result["status"];
+
+        $form->session()->flash($status, $message);
+
+        return redirect()->route('index');
     }
-
 }

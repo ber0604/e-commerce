@@ -23,11 +23,13 @@ route::match(['get', 'post'], '/{idgenero}/genero', [ProdutoController::class, '
 
 route::match(['get', 'post'], '/{idproduto}/carrinho/adicionar', [ProdutoController::class, 'adicionarCarrinho'])
     ->name('adicionarCarrinho');
-
 route::match(['get', 'post'], '/carrinho', [ProdutoController::class, 'verCarrinho'])
-->name('verCarrinho');
+    ->name('verCarrinho');
 route::match(['get', 'post'], '/{id}/deletarcarrinho', [ProdutoController::class, 'deletarCarrinho'])
-->name('deletarCarrinho');
+    ->name('deletarCarrinho');
+route::post('/finalizar/carrinho', [ProdutoController::class, 'finalizarCarrinho'])
+    ->name('finalizarCarrinho');
+
 
 route::match(['get', 'post'] , '/cadastrar' , [CadastroController::class , 'index'])->name('index');
 

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="icon" href="https://png.pngtree.com/element_our/png_detail/20181227/movie-icon-which-is-designed-for-all-application-purpose-new-png_287896.jpg">
-
+    @yield("scriptjs")
 </head>
 
 <body>
@@ -58,11 +58,23 @@
 
     <div class="container">
         <div class="row">
+            @if($message = Session::get("err"))
+            <div class="col-12">
+                <div class="alert alert-danger">
+                    {{$message}}
+                </div>
+            </div>
+            @endif
+            @if($message = Session::get("ok"))
+            <div class="col-12">
+                <div class="alert alert-success">
+                    {{$message}}
+                </div>
+            </div>
+            @endif
             @yield('conteudo')
         </div>
     </div>
-
-    <script src="{{ asset('js/script.js') }}"></script>
 
     @include('base.footer')
 </body>
