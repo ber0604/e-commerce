@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="icon" href="https://png.pngtree.com/element_our/png_detail/20181227/movie-icon-which-is-designed-for-all-application-purpose-new-png_287896.jpg">
+
 </head>
 
 <body>
@@ -44,7 +46,7 @@
                 </div>
 
                 <div class="carrinho">
-                    <a href="{{ route('verCarrinho') }}" class="btn btn-sm"><i class="fa fa-shopping-cart"></i>Carrinho</a>
+                    <a href="{{ route('verCarrinho') }}" class="btn btn-sm"><i class="fa fa-shopping-cart"></i></a>
                 </div>
 
             </div>

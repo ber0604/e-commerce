@@ -1,8 +1,8 @@
 @extends("layout")
 @section("conteudo")
-    <h3>carrinho</h3>
+    <h3>Carrinho de Compras</h3>
 
-    @if(isset($cart) && count($cart) > 0)
+    @if(isset($carrinho) && count($carrinho) > 0)
     <table class="table">
         <thead>
             <tr>
@@ -15,17 +15,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($cart as $produto)
+            @foreach ($carrinho as $id => $prod)
                 <tr>
                     <td>
-                        <a href="#" class="btn btn-danger btn-sm">
+                        <a href="{{ route('deletarcarrinho', ['id'=>$id])}}" class="btn btn-danger btn-sm">
                             <i class="fa fa-trash"></i>
                         </a>
                     </td>
-                    <td>{{$produto->nome}}</td>
-                    <td><img src="{{asset($produto->foto)}}"></td>
-                    <td>{{$produto->valor}}</td>
-                    <td>{{$produto->descricao}}</td>
+                    <td>{{$prod->nome}}</td>
+                    <td><img src="{{asset($prod->foto)}}"></td>
+                    <td>{{$prod->valor}}</td>
+                    <td>{{$prod->descricao}}</td>
 
                 </tr>
             @endforeach

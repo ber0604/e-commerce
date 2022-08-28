@@ -40,9 +40,10 @@ class ProdutoController extends Controller
     }
 
     public function adicionarCarrinho($idproduto= 0, Request $request){
-        $prod =Produto::find($idproduto);
+        $prod = Produto::find($idproduto);
 
         if($prod){
+            
             $carrinho = session('carrinho' , []);
 
             array_push($carrinho, $prod);
@@ -57,5 +58,15 @@ class ProdutoController extends Controller
         $carrinho = session('carrinho' , []);
         $data = ['carrinho' => $carrinho];
         return view("carrinho" , $data);
+    }
+
+    public function deletarCarrinho($id, Request $request){
+        $carrinho = session('carrinho' , []);
+
+        if(isset($carrinho[$id])){
+             unset($carrinho[$id]);
+        }
+        session(["carrinho" => $carrinho]);
+        return redirect()->route("verCarrinho");
     }
 }

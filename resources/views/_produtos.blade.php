@@ -5,8 +5,9 @@
                 <div class="card bg-black">
                     <img class="product-image " src={{ asset($prod->foto) }} alt="">
                     <div class="card-body ">
-                        <a href="{{route('adicionar_carrinho' , ['idproduto' , $prod->id])}}"></a>
+
                         <span class="product-price text-danger">{{ $prod->name }} - R${{ $prod->valor }}</span>
+                        <a href="{{route('adicionarCarrinho' , ['idproduto' , $prod->id])}}" class="btn btn-sm btn-dark text-danger">Adicionar Filme</a>
                     </div>
                 </div>
             </div>

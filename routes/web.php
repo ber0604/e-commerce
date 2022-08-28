@@ -15,13 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('index');
-});
 
-route::get('/home', [HomeController::class, 'index'])->name('home');
-
-route::match(['get', 'post'], '/home', [ProdutoController::class, 'index'])->name('home');
+route::match(['get', 'post'], '/', [ProdutoController::class, 'index'])->name('home');
 
 route::match(['get', 'post'], '/genero', [ProdutoController::class, 'genero'])->name('genero');
 route::match(['get', 'post'], '/{idgenero}/genero', [ProdutoController::class, 'genero'])->name('genero_id');
@@ -31,8 +26,13 @@ route::match(['get', 'post'], '/{idproduto}/carrinho/adicionar', [ProdutoControl
 
 route::match(['get', 'post'], '/carrinho', [ProdutoController::class, 'verCarrinho'])
 ->name('verCarrinho');
+route::match(['get', 'post'], '/{id}/deletarcarrinho', [ProdutoController::class, 'deletarCarrinho'])
+->name('deletarCarrinho');
 
-route::match(['get', 'post'], '/cadastro', [CadastroController::class, 'cadastro'])->name('cadastro');
+route::match(['get', 'post'] , '/cadastrar' , [CadastroController::class , 'index'])->name('index');
+
+route::get('/cliente/cadastrar', [CadastroController::class, 'cadastro'])->name('cadastro');
+route::POST('/cliente/cadastrar', [CadastroController::class, 'cadastro'])->name('cadastro');
 
 route::get('/conta', [ContaController::class, 'index'])->name('conta');
 

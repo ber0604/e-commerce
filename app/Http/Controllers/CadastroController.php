@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Hash;
 class CadastroController extends Controller
 {
 
+    public function index(Request $request){
+        $data = [];
+
+        return view("cadastro" , $data );
+
+    }
     public function cadastro(Request $form){
 
         $usuario = new Usuario();
@@ -22,7 +28,7 @@ class CadastroController extends Controller
 
         $usuario->save();
 
-        return redirect('login');
+        return redirect()->route('login' );
 
     }
 

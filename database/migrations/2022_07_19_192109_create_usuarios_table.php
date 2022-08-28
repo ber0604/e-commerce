@@ -6,14 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateUsuariosTable extends Migration
 {
-  
+
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->increments("id");
             $table->string('name', 255);
             $table->string('email', 255);
-            $table->string('username', 255);
+            $table->string('username', 255)->unique();
             $table->string('cpf', 255);
             $table->string('password', 255);
             $table->string('telephone', 255);
