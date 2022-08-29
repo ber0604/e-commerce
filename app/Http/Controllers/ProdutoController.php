@@ -31,9 +31,9 @@ class ProdutoController extends Controller
             $queryProdutos->where("genero_id" , $idgenero);
         }
 
-        $listaProdutos = $queryProdutos->get();
+        $listafilmes = $queryProdutos->get();
 
-        $data ["lista"] = $listaProdutos;
+        $data ["lista"] = $listafilmes;
         $data ["listaGenero"] = $listaGeneros;
         $data ["idgenero"] = $idgenero;
 

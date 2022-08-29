@@ -27,7 +27,7 @@
                         </td>
                         <td>{{ $produto->nome }}</td>
                         <td><img src="{{ asset($produto->foto) }}" width= "110" height="140"></td>
-                        <td>{{ $produto->valor }}</td>
+                        <td>R$ {{ $produto->valor }}</td>
                         <td>{{ $produto->descricao }}</td>
 
                     </tr>
