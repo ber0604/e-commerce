@@ -16,7 +16,8 @@
                 </tr>
             </thead>
             <tbody>
-                @php $total = 0;
+                @php
+                $total = 0;
                 @endphp
                 @foreach ($carrinho as $id => $produto)
                     <tr>
@@ -31,13 +32,14 @@
                         <td>{{ $produto->descricao }}</td>
 
                     </tr>
-                    @php $total += $produto->valor;
+                    @php
+                    $total += $produto->valor;
                     @endphp
                 @endforeach
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="5"> Total do Carrinho: R$ {{ $total }}</td>
+                    <td colspan="5" > Total do Carrinho: R$ {{ $total }}</td>
                 </tr>
             </tfoot>
         </table>
