@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class CadastroController extends Controller
+class   CadastroController extends Controller
 {
 
     public function index(Request $request)
@@ -40,7 +40,30 @@ class CadastroController extends Controller
         return redirect()->route('index');
     }
 
-    // public function editarCadastro(){
+    function update(Request $request, $id)
+    {
+        $usuario = Usuario::findOrFail($id);
 
-    // }
+        $usuario->update([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'cpf' => $request->cpf,
+            'password' => $request->password,
+            'phone' => $request->phone,
+        ]);
+
+        return "Perfil atualizado!";
+    }
+
+    function show($id)
+    {
+        $usuario = Usuario::findOrFail($id);
+
+        if ($usuario) {
+            return view('conta');
+        } else {
+            return redirect()->back();
+        }
+    }
 }

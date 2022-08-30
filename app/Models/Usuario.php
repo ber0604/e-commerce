@@ -15,8 +15,8 @@ class Usuario extends Model implements Authenticatable
          'username',
          'cpf',
          'email',
-         'telephone',
-         'password' 
+         'phone',
+         'password'
     ];
 
     public function getAuthIdentifierName()
@@ -40,5 +40,5 @@ class Usuario extends Model implements Authenticatable
     public function getRememberTokenName()
     {
     }
-    
+
 }

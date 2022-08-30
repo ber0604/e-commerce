@@ -47,10 +47,10 @@ class CarrinhoController extends Controller
         $result = $vendaService->finalizarVenda($produtos, Auth::user());
 
         if($result["status"] == "ok"){
-            $request()->session()->forget('carrinho');
+            session()->forget('carrinho');
         }
 
-        $request->session()->flash($result["status"], $result["message"]);
+     session()->flash($result["status"], $result["message"]);
 
         return redirect()->route("verCarrinho");
     }

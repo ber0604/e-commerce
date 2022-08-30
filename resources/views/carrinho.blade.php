@@ -26,7 +26,7 @@
                                 <i class="fa fa-trash"></i>
                             </a>
                         </td>
-                        <td>{{ $produto->nome }}</td>
+                        <td>{{ $produto->name }}</td>
                         <td><img src="{{ asset($produto->foto) }}" width= "110" height="140"></td>
                         <td>R$ {{ $produto->valor }}</td>
                         <td>{{ $produto->descricao }}</td>

@@ -29,8 +29,9 @@ route::match(['get', 'post'] , '/cadastrar' , [CadastroController::class , 'inde
 
 route::get('/cliente/cadastrar', [CadastroController::class, 'cadastro'])->name('cadastro');
 route::POST('/cliente/cadastrar', [CadastroController::class, 'cadastro'])->name('cadastro');
+Route::post('/cliente/update', [CadastroController::class, 'update'])->name('update');
+Route::get('/cliente/show/{id}', [CadastroController::class, 'show'])->where('id', '[0-9]+');
 
-route::get('/conta', [CadastroController::class, 'index'])->name('conta');
 
 route::get('/login', [UsuarioController::class, 'login'])->name('login');
 route::POST('/login', [UsuarioController::class, 'login'])->name('login');

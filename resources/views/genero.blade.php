@@ -10,7 +10,7 @@
                     {{ $gen->name }}</a>
                 @endforeach
             </div>
-        @endif
+    @endif
     </div>
 
     <div class="col-10 ">

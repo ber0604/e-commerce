@@ -23,7 +23,7 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="{{ route('home') }}" class=" col-sm nav-link px-2 text-danger ">Home</a></li>
                     <li><a href="{{ route('home') }}" class="col-sm nav-link px-2 text-danger ">Streaming</a></li>
-                    <li><a href="{{ route('conta') }}" class="col-sm nav-link px-2 text-danger  ">Minha conta</a></li>
+                    <li><a href="{{ route('update') }}" class="col-sm nav-link px-2 text-danger ">Minha conta</a></li>
                     <li><a href="{{ route('genero') }}" class="col-sm nav-link px-2 text-danger">Gêneros</a></li>
 
                 </ul>

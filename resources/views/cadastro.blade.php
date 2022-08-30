@@ -93,7 +93,8 @@
                         <div class="col-12">
                             <label for="phone" class="form-label">Telefone</label>
                             <input type="text" class="form-control" name="phone" id="phone"
-                                placeholder="(00) 00000-0000" required onkeypress="mask(this, mphone);" onblur="mask(this, mphone);">
+                                placeholder="(00) 00000-0000" required onkeypress="mask(this, mphone);"
+                                onblur="mask(this, mphone);">
                             <div class="invalid-feedback">
                                 Coloque seu número de telefone.
                             </div>
@@ -120,7 +121,8 @@
                                 Cadastro</button>
                         </div>
                     </div>
-
+                </form>
             </div>
+        </main>
     </div>
 @endsection
