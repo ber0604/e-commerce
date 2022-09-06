@@ -1,7 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+
 
 img {
     max-width: 100%;
@@ -88,4 +85,8 @@ li {
     border-color: #dc3545;
     font-size: 18px;
 
+}
+
+#pagamento{
+    margin-top: 20px;
 }

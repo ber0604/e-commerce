@@ -121,7 +121,7 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="{{ route('home') }}" class=" col-sm nav-link px-2 text-danger ">Home</a></li>
                     <li><a href="{{ route('home') }}" class="col-sm nav-link px-2 text-danger ">Streaming</a></li>
-                    <li><a href="{{ route('home')}}" class="col-sm nav-link px-2 text-danger ">Minha conta</a></li>
+                    <li><a href="{{ route('editar')}}" class="col-sm nav-link px-2 text-danger ">Minha conta</a></li>
                     <li><a href="{{ route('genero') }}" class="col-sm nav-link px-2 text-danger">Gêneros</a></li>
 
                 </ul>
@@ -196,8 +196,8 @@
                     </table>
                 @endif
 
-                <input type="text" name="hashseller" class="hashseller">
-                <input type="text" name="bandeira" class="bandeira">
+                <input type="hidden" name="hashseller" class="hashseller">
+                <input type="hidden" name="bandeira" class="bandeira">
 
                 <div class="row">
                     <div class="col-4">
@@ -243,7 +243,7 @@
                     </div>
                     @csrf
                 </div>
-                <input type="button" value="Confirmar Pagamento" class="btn btn-success btn-lg pagar" />
+                <input type="button" id ="pagamento" value="Confirmar Pagamento" class="btn btn-success btn-lg pagar" />
 
 
             </form>

@@ -108,7 +108,7 @@
                                 Por favor, crie sua senha.
                             </div>
                         </div>
-                        <div class="col-12">
+                        {{-- <div class="col-12">
                             <label for="password" class="form-label">Confirme sua senha</label>
                             <input type="password" class="form-control" id="confirm_password" name="confirm_password"
                                 placeholder="********" onkeyup='check();' required>
@@ -116,10 +116,9 @@
                                 Por favor, confirme sua senha.
                             </div>
                             <span id='message'></span>
-                        </div>
+                        </div> --}}
                         <div class="col-4">
-                            <button type="submit" class="btn btn-danger"name="submit" value="Register">Criar meu
-                                Cadastro</button>
+                            <button type="submit" class="btn btn-danger"name="submit" value="Register">Criar meu Cadastro</button>
                         </div>
                     </div>
                 </form>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use App\Servicos\ClienteService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class   CadastroController extends Controller
@@ -40,11 +41,11 @@ class   CadastroController extends Controller
     }
 
 
-    public function editar($id, Request $request)
+    public function editar( Request $request)
     {
         $data = [];
-
-        $usuario = Usuario::find($id);
+        
+        $usuario = Usuario::find(Auth::user()->id);
 
         if($request->isMethod("post")){
             $usuario->fill($request->all());

@@ -37,4 +37,4 @@ Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
 
 route::match(['get', 'post'], '/filmes/pagar', [   ProdutoController::class , 'pagar'])->name('pagar');
 
-route::match(['get', 'post'] ,'/{id}/editar' , [CadastroController::class, 'editar'])->name('editar');
+route::match(['get', 'post'] ,'/cliente/editar' , [CadastroController::class, 'editar'])->name('editar');
