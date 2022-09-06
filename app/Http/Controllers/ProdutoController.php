@@ -8,8 +8,42 @@ use App\Servicos\VendaService;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Auth;
 
+use PagSeguro\Configuration\Configure;
+
 class ProdutoController extends Controller
 {
+    private $_configs;
+
+    public function __construct(){
+        $this->_configs = new Configure();
+        $this->_configs->setCharset("UTF-8");
+        $this->_configs->setAccountCredentials(env('PAGSEGURO_EMAIL') , env('PAGSEGURO_TOKEN'));
+        $this->_configs->setEnvironment(env("PAGSEGURO_AMBIENTE"));
+        $this->_configs->setLog(true, storage_path('logs/pagseguro_' . date('Ymd') . '.log'));
+
+    }
+
+    public function getCredential(){
+        return $this->_configs->getAccountCredentials();
+    }
+
+    public function pagar(Request $request){
+        $data = [];
+
+        $carrinho = session('carrinho' , []);
+        $data['carrinho'] =  $carrinho;
+
+        $sessionCode = \PagSeguro\Services\Session::create(
+            $this->getCredential()
+        );
+
+        $IDSession = $sessionCode->getResult();
+        $data["sessionID"] = $IDSession;
+
+        return view ("pagamento", $data);
+ 
+    }
+
     public function index(Request $request){
         $data = [];
 
@@ -39,5 +73,7 @@ class ProdutoController extends Controller
 
         return view("genero", $data);
     }
+
+
 
 }

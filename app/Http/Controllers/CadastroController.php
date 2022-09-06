@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Usuario;
 use App\Servicos\ClienteService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class   CadastroController extends Controller
@@ -40,30 +39,22 @@ class   CadastroController extends Controller
         return redirect()->route('index');
     }
 
-    function update(Request $request, $id)
+
+    public function editar($id, Request $request)
     {
-        $usuario = Usuario::findOrFail($id);
+        $data = [];
 
-        $usuario->update([
-            'name' => $request->name,
-            'username' => $request->username,
-            'email' => $request->email,
-            'cpf' => $request->cpf,
-            'password' => $request->password,
-            'phone' => $request->phone,
-        ]);
+        $usuario = Usuario::find($id);
 
-        return "Perfil atualizado!";
-    }
+        if($request->isMethod("post")){
+            $usuario->fill($request->all());
+            $usuario->save();
 
-    function show($id)
-    {
-        $usuario = Usuario::findOrFail($id);
-
-        if ($usuario) {
-            return view('conta');
-        } else {
-            return redirect()->back();
+            $data["resp"] = "Cadastro editado com sucesso";
         }
+
+        $data["usuario"] = $usuario;
+        return view('editarCadastro' , $data);
+
     }
 }

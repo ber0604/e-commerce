@@ -29,10 +29,12 @@ route::match(['get', 'post'] , '/cadastrar' , [CadastroController::class , 'inde
 
 route::get('/cliente/cadastrar', [CadastroController::class, 'cadastro'])->name('cadastro');
 route::POST('/cliente/cadastrar', [CadastroController::class, 'cadastro'])->name('cadastro');
-Route::post('/cliente/update', [CadastroController::class, 'update'])->name('update');
-Route::get('/cliente/show/{id}', [CadastroController::class, 'show'])->where('id', '[0-9]+');
 
 
 route::get('/login', [UsuarioController::class, 'login'])->name('login');
 route::POST('/login', [UsuarioController::class, 'login'])->name('login');
 Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
+
+route::match(['get', 'post'], '/filmes/pagar', [   ProdutoController::class , 'pagar'])->name('pagar');
+
+route::match(['get', 'post'] ,'/{id}/editar' , [CadastroController::class, 'editar'])->name('editar');

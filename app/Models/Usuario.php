@@ -11,6 +11,7 @@ class Usuario extends Model implements Authenticatable
     use HasFactory;
 
     protected $fillable=[
+        'id',
          'name',
          'username',
          'cpf',

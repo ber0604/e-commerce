@@ -44,7 +44,7 @@
             </tfoot>
         </table>
 
-        <form action="{{ route('finalizarCarrinho') }}" method="POST">
+        <form action="{{ route('pagar') }}" method="POST">
             @csrf
             <input type="submit" value="Finalizar Compra" class=" btn btn-lg btn-success">
         </form>
